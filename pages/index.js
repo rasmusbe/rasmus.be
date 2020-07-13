@@ -1,200 +1,301 @@
 import Head from 'next/head'
+import Icon from '@mdi/react'
+import { mdiEmail, mdiPhone } from '@mdi/js'
+
+
+const colorWhite = '#FFFAFA';
+const colorPrimary = '#3C4360';
+const mobileBreakpoint = '600px';
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Rasmus Bengtsson</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/zeit/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <aside>
+        <div className="photoContainer">
+          <img src="/rasmus.png" alt="Porträtt på Rasmus Bengtsson" title="Rasmus Bengtsson" />
         </div>
+        <h1 className="mobile-show">Rasmus Bengtsson</h1>
+        <div id="aboutme">
+          <h2>Om mig</h2>
+          <p>Som systemutvecklare har jag förståelse för både affären, användaren och tekniken.</p>
+          <p>På fritiden tycker jag om att träna, resa eller träffa vänner och familj.</p>
+        </div>
+        <div id="contact">
+          <h2>Kontakt</h2>
+          <ul>
+            <li>
+              <Icon
+                className="icon"
+                path={mdiEmail}
+                title="E-post"
+                size={1} />
+              <a href="mailto:r@smus.be">r@smus.be</a>
+            </li>
+            <li>
+              <Icon
+                className="icon"
+                path={mdiPhone}
+                title="Tel"
+                size={1} />
+              <a href="tel:+46739475200">073 947 52 00</a>
+            </li>
+          </ul>
+        </div>
+        <div id="skills">
+          <h2>Kunskaper</h2>
+          <h3>Tekniker</h3>
+          <ul>
+            <li>PHP</li>
+            <li>WordPress</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>React Native</li>
+            <li>HTML</li>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+            <li>XML</li>
+            <li>Cordova</li>
+            <li>PhoneGap</li>
+            <li>Git</li>
+          </ul>
+          <h3>Operativsystem</h3>
+          <ul>
+            <li>MacOS</li>
+            <li>Linux</li>
+            <li>Windows</li>
+          </ul>
+          <h3>Program</h3>
+          <ul>
+            <li>Microsoft Office</li>
+            <li>Adobe Photoshop</li>
+          </ul>
+        </div>
+      </aside>
+      <main>
+          <h1 className="mobile-hide">Rasmus Bengtsson</h1>
+          <div>
+            <h2>Arbetslivserfarenhet</h2>
+            <ul>
+              <li>
+                <div className="title">
+                  <h3>CTO / Lead Developer</h3>
+                  <span className="duration">Jan 2018 - Pågående</span>
+                </div>
+                <p>
+                  <strong>TidyApp, Stockholm.</strong>&nbsp;
+                  Digital förmedlingsplattform för uppdrag inom hushållsnära tjänster. Mitt anvsar inkluderar att ersätta hela den tekniska plattformen.
+                </p>
+              </li>
+              <li>
+                <div className="title">
+                  <h3>Lead Developer</h3>
+                  <span className="duration">Sep 2014 - Dec 2017</span>
+                </div>
+                <p>
+                  <strong>Isotop, Stockholm.</strong>&nbsp;
+                  Teknikbyrå som bygger värdeskapande plattformar för webb och mobil. Jag ansvarade bland annat för lansering av e-handel åt en kund i ca 20 länder.
+                </p>
+              </li>
+              <li>
+                <div className="title">
+                  <h3>Ansvarig Webbutveckling</h3>
+                  <span className="duration">Dec 2013 - Sep 2014</span>
+                </div>
+                <p>
+                  <strong>Oslagbar Produktion, Stockholm.</strong>&nbsp;
+                  Digital produktionsbyrå för webb och mobila enheter. Drevs som aktiebolag av mig och en kollega som en avknoppning från mitt tidigare bolag Social Solutions.
+                </p>
+              </li>
+              <li>
+                <div className="title">
+                  <h3>Ansvarig Webbutveckling</h3>
+                  <span className="duration">Dec 2010 - Dec 2013</span>
+                </div>
+                <p>
+                  <strong>Social Solutions, Stockholm.</strong>&nbsp;
+                  Digital medie- och produktionsbyrå för allt inom webb, sociala medier och mobila enheter där jag ansvarade för webbutvecklingen.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2>Utbildning</h2>
+            <ul>
+              <li>
+                <div className="title">
+                  <h3>Civilingenjör, Medieteknik 270hp</h3>
+                  <span className="duration">2005 - 2011</span>
+                </div>
+                <p>
+                  <strong>Kungliga Tekniska Högskolan, Stockholm.</strong><br />
+                  Specialiserat mig inom människa-datorinteraktion och interaktiva medier.
+                </p>
+              </li>
+              <li>
+                <div className="title">
+                  <h3>Tekniskt basår</h3>
+                  <span className="duration">2004 - 2005</span>
+                </div>
+                <p>
+                  <strong>Kungliga Tekniska Högskolan, Stockholm.</strong>
+                </p>
+              </li>
+              <li>
+                <div className="title">
+                  <h3>Gymnasieutbildning, Media-programmet</h3>
+                  <span className="duration">2001 - 2004</span>
+                </div>
+                <p>
+                  <strong>Mobila Gymnasiet Kista, Stockholm.</strong>
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2>Språk</h2>
+            <ul>
+              <li>
+                <div className="title">
+                  <h3>Svenska</h3>
+                </div>
+                <p>
+                  Modersmål
+                </p>
+              </li>
+              <li>
+                <div className="title">
+                  <h3>Engelska</h3>
+                </div>
+                <p>
+                  Flytande
+                </p>
+              </li>
+            </ul>
+          </div>
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
 
       <style jsx>{`
         .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
+          width: 800px;
+          margin: 0 auto;
           display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
         }
 
-        main {
-          padding: 5rem 0;
-          flex: 1;
+        aside {
+          flex: 0 0 35.1966%;
+          margin-right: 3%;
+          background-color: ${colorPrimary};
+          color: ${colorWhite};
+          padding: 15px;
+        }
+
+        aside h2 {
+          margin-bottom: 0;
+        }
+
+        aside h2 + p {
+          margin-top: 0;
+        }
+
+        #contact li {
+          margin: .5em 0;
           display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
         }
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
+        #contact a {
+          color: ${colorWhite};
           text-decoration: none;
+          display: inline-block;
+          margin-left: 5px;
         }
 
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
+        #skills ul,
+        #contact ul {
+          padding: 0;
           margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
+          list-style: none;
         }
 
-        .title,
-        .description {
+        #skills ul li {
+          display: inline-block;
+          background-color: ${colorWhite};
+          color: ${colorPrimary};
+          border-radius: 6px;
+          padding: 3px 6px;
+          margin: 3px;
+        }
+
+        .photoContainer {
+          background-color: ${colorWhite};
+          border-radius: 50%;
+          padding: 5px;
+          overflow: hidden;
+          margin: 10px;
+        }
+
+        .photoContainer img {
+          position: relative;
+          top: 10px;
+        }
+
+        h1 {
+          line-height: 300%;
           text-align: center;
+          color: ${colorWhite};
+          background-color: ${colorPrimary};
         }
 
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
+        main ul {
+          padding-left: 15px;
         }
 
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
+        main .title {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
+          align-items: flex-end;
+          justify-content: space-between;
         }
 
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
+        main .title h3 {
           margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
         }
 
-        .logo {
-          height: 1em;
+        main .title + p {
+          margin-top: .5em;
         }
 
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
+        @media only screen and (max-width: ${mobileBreakpoint}) {
+          .container {
             flex-direction: column;
+            width: 100%;
+          }
+
+          aside {
+            margin-right: 0;
+          }
+
+          main {
+            margin: 0 15px;
+          }
+
+          main .title {
+            flex-direction: column;
+            align-items: flex-start;
           }
         }
+
       `}</style>
 
-      <style jsx global>{`
+      <style global jsx>{`
         html,
         body {
           padding: 0;
           margin: 0;
+          background-color: ${colorWhite};
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
@@ -203,6 +304,30 @@ export default function Home() {
         * {
           box-sizing: border-box;
         }
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        svg {
+          width: 1.5rem;
+        }
+
+        .mobile-show {
+          display: none;
+        }
+
+        @media only screen and (max-width: ${mobileBreakpoint}) {
+          .mobile-show {
+            display: block;
+          }
+
+          .mobile-hide {
+            display: none;
+          }
+        }
+
       `}</style>
     </div>
   )
