@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Icon from '@mdi/react'
-import { mdiEmail, mdiPhone } from '@mdi/js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faPhoneAlt, faHome } from '@fortawesome/free-solid-svg-icons'
 
 
 const colorWhite = '#FFFAFA';
@@ -13,6 +13,7 @@ export default function Home() {
       <Head>
         <title>Rasmus Bengtsson</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Systemutvecklare met förståelse för affären, användaren och tekniken" />
       </Head>
 
       <aside>
@@ -29,20 +30,16 @@ export default function Home() {
           <h2>Kontakt</h2>
           <ul>
             <li>
-              <Icon
-                className="icon"
-                path={mdiEmail}
-                title="E-post"
-                size={1} />
+              <FontAwesomeIcon icon={faEnvelope} />
               <a href="mailto:r@smus.be">r@smus.be</a>
             </li>
             <li>
-              <Icon
-                className="icon"
-                path={mdiPhone}
-                title="Tel"
-                size={1} />
+              <FontAwesomeIcon icon={faPhoneAlt} />
               <a href="tel:+46739475200">073 947 52 00</a>
+            </li>
+            <li className="web">
+              <FontAwesomeIcon icon={faHome} />
+              <a href="https://rasmus.be">rasmus.be</a>
             </li>
           </ul>
         </div>
@@ -158,7 +155,7 @@ export default function Home() {
           </div>
           <div>
             <h2>Språk</h2>
-            <ul>
+            <ul id="languages">
               <li>
                 <div className="title">
                   <h3>Svenska</h3>
@@ -176,6 +173,10 @@ export default function Home() {
                 </p>
               </li>
             </ul>
+          </div>
+          <div>
+            <h2>Referenser</h2>
+            <p>Lämnas på begäran.</p>
           </div>
       </main>
 
@@ -198,7 +199,12 @@ export default function Home() {
           margin-bottom: 0;
         }
 
-        aside h2 + p {
+        aside h3 {
+          margin-bottom: 5px;
+        }
+
+        aside h2 + p,
+        aside h3 + ul {
           margin-top: 0;
         }
 
@@ -207,11 +213,15 @@ export default function Home() {
           display: flex;
         }
 
+        #contact li.web {
+          display: none;
+        }
+
         #contact a {
           color: ${colorWhite};
           text-decoration: none;
           display: inline-block;
-          margin-left: 5px;
+          margin-left: 10px;
         }
 
         #skills ul,
@@ -268,6 +278,24 @@ export default function Home() {
           margin-top: .5em;
         }
 
+        main h2 {
+          margin-bottom: 0;
+        }
+
+        main h2 + p {
+          margin-top: 5px;
+        }
+
+        main #languages {
+          display: flex;
+          list-style: none;
+          padding-left: 0;
+        }
+
+        main #languages li {
+          margin-right: 2em;
+        }
+
         @media only screen and (max-width: ${mobileBreakpoint}) {
           .container {
             flex-direction: column;
@@ -285,6 +313,41 @@ export default function Home() {
           main .title {
             flex-direction: column;
             align-items: flex-start;
+          }
+        }
+
+        @media only print {
+          aside {
+            color: ${colorPrimary};
+            background: none;
+            border-right: 1px solid ${colorPrimary};
+          }
+
+          #contact li.web {
+            display: flex;
+          }
+
+          #contact a {
+            color: ${colorPrimary}
+          }
+
+          aside h3 {
+            margin-bottom: 5px;
+          }
+
+          #skills ul {
+            list-style: disc;
+          }
+
+          #skills ul li {
+            background: none;
+            padding: 0;
+            margin: 0 0 0 1em;
+            display: list-item;
+          }
+
+          #skills ul li::after {
+            content: " ";
           }
         }
 
