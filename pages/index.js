@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhoneAlt, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 
 const colorWhite = '#FFFAFA';
@@ -21,12 +22,12 @@ export default function Home() {
           <img src="/rasmus.png" alt="Porträtt på Rasmus Bengtsson" title="Rasmus Bengtsson" />
         </div>
         <h1 className="mobile-show">Rasmus Bengtsson</h1>
-        <div id="aboutme">
+        <section id="aboutme">
           <h2>Om mig</h2>
           <p>Som systemutvecklare har jag förståelse för både affären, användaren och tekniken.</p>
           <p>På fritiden tycker jag om att träna, resa eller träffa vänner och familj.</p>
-        </div>
-        <div id="contact">
+        </section>
+        <section id="contact">
           <h2>Kontakt</h2>
           <ul>
             <li>
@@ -37,13 +38,17 @@ export default function Home() {
               <FontAwesomeIcon icon={faPhoneAlt} />
               <a href="tel:+46739475200">073 947 52 00</a>
             </li>
+            <li>
+              <FontAwesomeIcon icon={faGithub} />
+              <a href="https://github.com/rasmusbe">rasmusbe</a>
+            </li>
             <li className="web">
               <FontAwesomeIcon icon={faHome} />
               <a href="https://rasmus.be">rasmus.be</a>
             </li>
           </ul>
-        </div>
-        <div id="skills">
+        </section>
+        <section id="skills">
           <h2>Kunskaper</h2>
           <h3>Tekniker</h3>
           <ul>
@@ -71,11 +76,11 @@ export default function Home() {
             <li>Microsoft Office</li>
             <li>Adobe Photoshop</li>
           </ul>
-        </div>
+        </section>
       </aside>
       <main>
           <h1 className="mobile-hide">Rasmus Bengtsson</h1>
-          <div>
+          <section>
             <h2>Arbetslivserfarenhet</h2>
             <ul>
               <li>
@@ -119,8 +124,8 @@ export default function Home() {
                 </p>
               </li>
             </ul>
-          </div>
-          <div>
+          </section>
+          <section>
             <h2>Utbildning</h2>
             <ul>
               <li>
@@ -129,7 +134,7 @@ export default function Home() {
                   <span className="duration">2005 - 2011</span>
                 </div>
                 <p>
-                  <strong>Kungliga Tekniska Högskolan, Stockholm.</strong><br />
+                  <strong>Kungliga Tekniska Högskolan, Stockholm</strong><br />
                   Specialiserat mig inom människa-datorinteraktion och interaktiva medier.
                 </p>
               </li>
@@ -139,7 +144,7 @@ export default function Home() {
                   <span className="duration">2004 - 2005</span>
                 </div>
                 <p>
-                  <strong>Kungliga Tekniska Högskolan, Stockholm.</strong>
+                  <strong>Kungliga Tekniska Högskolan, Stockholm</strong>
                 </p>
               </li>
               <li>
@@ -148,36 +153,50 @@ export default function Home() {
                   <span className="duration">2001 - 2004</span>
                 </div>
                 <p>
-                  <strong>Mobila Gymnasiet Kista, Stockholm.</strong>
+                  <strong>Mobila Gymnasiet Kista, Stockholm</strong>
                 </p>
               </li>
             </ul>
-          </div>
-          <div>
+          </section>
+          <section>
+            <h2>Förtroendeuppdrag</h2>
+            <ul>
+              <li>
+                <div className="title">
+                  <h3>Vice Ordförande</h3>
+                  <span className="duration">2020 - Pågående</span>
+                </div>
+                <p>
+                  <strong>BRF Moroten 1-3</strong><br />
+                  Invald i styrelsen med ansvar för IT och teknik samt vice ordförande.
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section>
             <h2>Språk</h2>
             <ul id="languages">
               <li>
-                <div className="title">
-                  <h3>Svenska</h3>
-                </div>
+                <h3>Svenska</h3>
                 <p>
                   Modersmål
                 </p>
               </li>
               <li>
-                <div className="title">
-                  <h3>Engelska</h3>
-                </div>
+                <h3>Engelska</h3>
                 <p>
                   Flytande
                 </p>
               </li>
             </ul>
-          </div>
-          <div>
-            <h2>Referenser</h2>
+          </section>
+          <section>
+            <h2>Övrig information</h2>
+            <h3>Körkort</h3>
+            <p>Jag har svenskt körkort för personbil.</p>
+            <h3>Referenser</h3>
             <p>Lämnas på begäran.</p>
-          </div>
+          </section>
       </main>
 
       <style jsx>{`
@@ -201,11 +220,6 @@ export default function Home() {
 
         aside h3 {
           margin-bottom: 5px;
-        }
-
-        aside h2 + p,
-        aside h3 + ul {
-          margin-top: 0;
         }
 
         #contact li {
@@ -270,7 +284,7 @@ export default function Home() {
           justify-content: space-between;
         }
 
-        main .title h3 {
+        main h3 {
           margin: 0;
         }
 
@@ -279,11 +293,7 @@ export default function Home() {
         }
 
         main h2 {
-          margin-bottom: 0;
-        }
-
-        main h2 + p {
-          margin-top: 5px;
+          margin-bottom: 5px;
         }
 
         main #languages {
@@ -293,7 +303,7 @@ export default function Home() {
         }
 
         main #languages li {
-          margin-right: 2em;
+          margin-right: 4em;
         }
 
         @media only screen and (max-width: ${mobileBreakpoint}) {
@@ -379,6 +389,17 @@ export default function Home() {
 
         .mobile-show {
           display: none;
+        }
+
+        h2 + p,
+        h3 + p,
+        h2 + ul,
+        h3 + ul {
+          margin-top: 0;
+        }
+
+        main section {
+          page-break-inside: avoid;
         }
 
         @media only screen and (max-width: ${mobileBreakpoint}) {
