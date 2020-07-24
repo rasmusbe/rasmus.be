@@ -14,7 +14,7 @@ export default function Home() {
       <Head>
         <title>Rasmus Bengtsson</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Systemutvecklare met förståelse för affären, användaren och tekniken" />
+        <meta name="description" content="Systemutvecklare med förståelse för affären, användaren och tekniken" />
       </Head>
 
       <aside>
