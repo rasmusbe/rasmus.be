@@ -90,7 +90,7 @@ export default function Home() {
                 </div>
                 <p>
                   <strong>TidyApp, Stockholm.</strong>&nbsp;
-                  Digital förmedlingsplattform för uppdrag inom hushållsnära tjänster. Mitt anvsar inkluderar att ersätta hela den tekniska plattformen.
+                  Digital förmedlingsplattform för uppdrag inom hushållsnära tjänster. Mitt ansvar inkluderar att ersätta hela den tekniska plattformen.
                 </p>
               </li>
               <li>
